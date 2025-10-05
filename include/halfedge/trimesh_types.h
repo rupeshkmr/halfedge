@@ -19,6 +19,12 @@ namespace trimesh
         {
             v[0] = v[1] = -1;
         }
+
+		edge_t(index_t i, index_t j)
+		{
+			v[0] = i;
+			v[1] = j;
+		}
     };
     
     struct triangle_t
@@ -37,6 +43,13 @@ namespace trimesh
         triangle_t()
         {
             v[0] = v[1] = v[2] = -1;
+        }
+
+		triangle_t(index_t i, index_t j, index_t k)
+		{
+			v[0] = i;
+			v[1] = j;
+			v[2] = k;
         }
     };
 }

@@ -1,4 +1,4 @@
-#include "trimesh.h"
+#include <halfedge/trimesh.h>
 
 // needed for implementation
 #include <cassert>
@@ -238,6 +238,7 @@ void unordered_edges_from_triangles( const unsigned long num_triangles, const tr
     edge_set_t edges;
     for( int t = 0; t < num_triangles; ++t )
     {
+    	// TODO Maybe change this to ensure that the edges are stored in order of opposite vertices (i, j, k)
         edges.insert( std::make_pair( std::min( triangles[t].i(), triangles[t].j() ), std::max( triangles[t].i(), triangles[t].j() ) ) );
         edges.insert( std::make_pair( std::min( triangles[t].j(), triangles[t].k() ), std::max( triangles[t].j(), triangles[t].k() ) ) );
         edges.insert( std::make_pair( std::min( triangles[t].k(), triangles[t].i() ), std::max( triangles[t].k(), triangles[t].i() ) ) );

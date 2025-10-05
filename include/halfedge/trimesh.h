@@ -171,6 +171,8 @@ public:
     std::vector< index_t > boundary_vertices() const;
     
     std::vector< std::pair< index_t, index_t > > boundary_edges() const;
+
+    const std::vector<trimesh::index_t>& getEdgeHalfEdges() const { return m_edge_halfedges; }
     
 private:
     std::vector< halfedge_t > m_halfedges;
